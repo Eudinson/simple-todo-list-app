@@ -171,7 +171,14 @@ const HomePage = () => {
                           :
                           <TableRow key={id}>
                             <TableCell component="th" scope="row">
-                              <span className={styles.tasks}>{task}</span>
+                              <span style={{
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                                display: '-webkit-box',
+                                lineClamp: 1,
+                                WebkitLineClamp: 1,
+                                WebkitBoxOrient: 'vertical'
+                              }}>{task}</span>
                             </TableCell>
                             <TableCell component="th" scope="row" width={60}>
                               <Tooltip title="Edit">
