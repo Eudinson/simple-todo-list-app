@@ -16,7 +16,7 @@ import {
   TableCell,
   Paper,
   IconButton,
-  Tooltip
+  Tooltip,
 } from "@mui/material";
 import {
   DeleteOutline,
@@ -34,8 +34,13 @@ const HomePage = () => {
   const [todoList, setTodoList] = useState([]);
 
   useEffect(() => {
-
+    const getTodos = JSON.parse(localStorage.getItem('todos'));
+    getTodos && setTodoList(getTodos);
   }, [])
+
+  useEffect(() => {
+      localStorage.setItem('todos', JSON.stringify(todoList));
+  }, [todoList])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -70,6 +75,7 @@ const HomePage = () => {
 
   const handleUpdate = (id) => {
     todoList.filter(data => data.id === id).map(data => data.task = editInputValue);
+    localStorage.setItem('todos', JSON.stringify(todoList));
     setTodoId(null);
   }
 
@@ -165,9 +171,7 @@ const HomePage = () => {
                           :
                           <TableRow key={id}>
                             <TableCell component="th" scope="row">
-                              {
-                                task
-                              }
+                              <span className={styles.tasks}>{task}</span>
                             </TableCell>
                             <TableCell component="th" scope="row" width={60}>
                               <Tooltip title="Edit">

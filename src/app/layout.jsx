@@ -6,7 +6,7 @@ const font = Poppins({
 })
 
 export const metadata = {
-  title: 'Todo App',
+  title: 'Simple Todo App',
   description: 'A simple todo app by Eudin',
 }
 
