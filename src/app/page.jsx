@@ -128,10 +128,10 @@ const HomePage = () => {
             <Table aria-label="customized table">
               <TableHead className={styles.tableHead}>
                 <TableRow>
-                  <TableCell component="th" scope="row" className={styles.tableHeadCell}>
+                  <TableCell component="th" scope="row" className={styles.tableHeadCell} style={{ color: '#fff'}} >
                     Todos
                   </TableCell>
-                  <TableCell component="th" scope="row" className={styles.tableHeadCell}>
+                  <TableCell component="th" scope="row" className={styles.tableHeadCell} style={{ color: '#fff'}} >
                     Actions
                   </TableCell>
                 </TableRow>
